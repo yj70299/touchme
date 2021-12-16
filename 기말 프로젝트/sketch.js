@@ -1,56 +1,33 @@
-let x = 320;
-let y = 180;
-let xspeed = 5;
-let yspeed = 2;
+let a= [];
+a = ['더 세게', '부드럽게', '강하게', '천천히', '빠르게', '꾸욱', '살살', '위에서 아래로', '새끼 손가락으로', '코끝으로'];
 
-let r = 25;
+let r = [];
+touch = false;
 
-let input;
-let button;
-let word;
+
 
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
-    img = loadImage('1x/background.png');
 
-}
+    // for (let i = 0; i <9; i++){
+    //   r[i] = ;
+    }
+
+
 
 function draw() {
-    image(img, 0, 0, windowWidth, windowHeight);
-    // textSize(20);
-    // textAlign(CENTER, CENTER);
-    // fill(0);
-    // text('무엇을 만지고 있나요?', width/2, height/2);
+  background(255);
 
-    fill(255);
-    ellipse(x, y, r*2, r*2);
-    x += xspeed;
-    y += yspeed;
-    if (x > width - r || x < r) {
-      xspeed = -xspeed;
-    }
-    if (y > height - r || y < r) {
-      yspeed = -yspeed;
-    }
-
-    if(mouseIsPressed){
-        input = createInput('무엇을 만지고 있나요?');
-        input.position(windowWidth/3, windowHeight/2);
-
-        button = createButton('입력');
-        button.position((windowWidth/3)+160, (windowHeight/2)-1);
-        button.mousePressed(updateText);
-    }
-}
-
-    function updateText() {
-        textSize(30);
-        word = input.value();
-      
-        for (let i = 0; i < 30; i++) {
-          fill(random(255));
-          text(word, random(width), random(height));
-        }
+  // fill(255);
+  // noStroke();
+  // rect(0, 0, windowWidth, windowHeight);
+  textSize(50);
+  fill(0);
+  text(random(a), width/3, height/2);
   
-}
+  if(mouseIsPressed){
+    touch = true;
+
+    }
+  }
